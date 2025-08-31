@@ -1,0 +1,479 @@
+Abaixo está a documentação “Aba por Aba” já no formato dos templates (YAML/DSL/Checklist), pronta para virar base do MVP (glossário, dicionário de dados, catálogo de regras e processos). Mantive linguagem simples e marquei assunções onde precisei inferir algo — você pode ajustar depois nos próprios YAMLs.
+
+Glossário (resumo)
+
+Captar: lançamentos diários (Entradas/Saídas/Transferências).
+
+Envelope: cálculo e confirmação das primícias (Dízimo e Ofertas).
+
+Renda: previsto × realizado e distribuição por mês.
+
+Monitor: acompanhamento semanal/mensal do orçamento (tetos/envelopes).
+
+Analisar: consolidações (mês/categoria/subcategoria).
+
+Panorama: visão anual e tendências.
+
+Patrimonial: evolução de saldos e onde estão alocados (bancos, espécie, aplicações).
+
+Ajustes: listas e parâmetros (categorias, percentuais, contas, metas).
+
+Primícias: prioridade de consagração (Dízimo → Ofertas).
+
+Consagrações: Dízimo + Ofertas (regular, missão, humanitária, projetos).
+
+Sábado: do pôr-do-sol de sexta ao pôr-do-sol de sábado (respeitar na agenda).
+
+Fichas de Aba (YAML)
+
+Nota: Estes YAMLs funcionam como “cartão de identidade” de cada aba e também como dicionário de dados. Ajuste nomes/tipos conforme seu arquivo.
+
+aba: Ajustes
+proposito: Central de listas e parâmetros (categorias, percentuais, contas, metas).
+campos:
+  - nome: categoria
+    tipo: text
+    obrigatorio: true
+  - nome: subcategoria
+    tipo: text
+    obrigatorio: true
+  - nome: conta
+    tipo: text
+    obrigatorio: false
+  - nome: tipo_conta
+    tipo: enum[banco, especie, cartao, investimento, outro]
+    obrigatorio: false
+  - nome: base_dizimo
+    tipo: enum[bruta, liquida]
+    obrigatorio: true
+  - nome: dizimo_percentual
+    tipo: number   # ex.: 0.10
+    obrigatorio: true
+  - nome: oferta_regular_min
+    tipo: number   # ex.: 0.05
+    obrigatorio: true
+  - nome: oferta_regular_max
+    tipo: number   # ex.: 0.10
+    obrigatorio: true
+  - nome: oferta_missionaria_percentual
+    tipo: number
+    obrigatorio: false
+  - nome: oferta_humanitaria_percentual
+    tipo: number
+    obrigatorio: false
+  - nome: teto_envelope
+    tipo: number   # valor planejado por categoria/centro
+    obrigatorio: false
+  - nome: atraso_conciliacao_dias
+    tipo: number   # ex.: 7
+    obrigatorio: false
+  - nome: limite_estouro_percentual
+    tipo: number   # ex.: 0.10 (10%)
+    obrigatorio: false
+relacoes:
+  - de: subcategoria
+    para: (categoria)  # subcategoria pertence à categoria
+formulas_chave: []
+regras_preenchimento:
+  - "Editar aqui primeiro: categorias, percentuais e metas."
+  - "Manter convenções coerentes (acentos/maiúsculas)."
+
+aba: Captar
+proposito: Registro de todas as transações do dia a dia.
+campos:
+  - nome: data_movimento
+    tipo: date
+    obrigatorio: true
+  - nome: movimento
+    tipo: enum[Entrada, Saída, Transferência]
+    obrigatorio: true
+  - nome: valor
+    tipo: number
+    obrigatorio: true
+  - nome: categoria
+    tipo: ref(Ajustes.categoria)
+    obrigatorio: true
+  - nome: subcategoria
+    tipo: ref(Ajustes.subcategoria)
+    obrigatorio: false
+  - nome: modalidade
+    tipo: text   # ex.: dinheiro, pix, cartão, boleto
+    obrigatorio: false
+  - nome: origem_do_valor
+    tipo: ref(Ajustes.conta)
+    obrigatorio: false
+  - nome: destino_do_valor
+    tipo: ref(Ajustes.conta)
+    obrigatorio: false
+  - nome: pagador
+    tipo: text
+    obrigatorio: false
+  - nome: recebedor
+    tipo: text
+    obrigatorio: false
+  - nome: observacao
+    tipo: text
+    obrigatorio: false
+  - nome: mes
+    tipo: number  # derivado de data
+    obrigatorio: false
+  - nome: ano
+    tipo: number  # derivado de data
+    obrigatorio: false
+relacoes:
+  - de: categoria
+    para: Ajustes.categoria
+  - de: subcategoria
+    para: Ajustes.subcategoria
+  - de: origem_do_valor
+    para: Ajustes.conta
+  - de: destino_do_valor
+    para: Ajustes.conta
+formulas_chave:
+  - nome: mes
+    definicao: "MÊS(data_movimento)"
+  - nome: ano
+    definicao: "ANO(data_movimento)"
+regras_preenchimento:
+  - "Lançar no dia do fato (ou D+1 no máximo)."
+  - "Preencher categoria e valor com atenção."
+
+aba: Envelope
+proposito: Calcular e confirmar consagrações (primícias) — Dízimo e Ofertas.
+campos:
+  - nome: mes
+    tipo: number
+    obrigatorio: true
+  - nome: ano
+    tipo: number
+    obrigatorio: true
+  - nome: renda_base
+    tipo: number   # total de entradas que compõem base do dízimo (ver base_dizimo)
+    obrigatorio: true
+  - nome: dizimo_percentual
+    tipo: ref(Ajustes.dizimo_percentual)
+    obrigatorio: true
+  - nome: dizimo_valor
+    tipo: number
+    obrigatorio: true
+  - nome: oferta_regular_percentual
+    tipo: range(ref(Ajustes.oferta_regular_min..Ajustes.oferta_regular_max))
+    obrigatorio: true
+  - nome: oferta_regular_valor
+    tipo: number
+    obrigatorio: true
+  - nome: oferta_missionaria_percentual
+    tipo: ref(Ajustes.oferta_missionaria_percentual)
+    obrigatorio: false
+  - nome: oferta_missionaria_valor
+    tipo: number
+    obrigatorio: false
+  - nome: oferta_humanitaria_percentual
+    tipo: ref(Ajustes.oferta_humanitaria_percentual)
+    obrigatorio: false
+  - nome: oferta_humanitaria_valor
+    tipo: number
+    obrigatorio: false
+  - nome: total_consagracoes
+    tipo: number
+    obrigatorio: true
+relacoes:
+  - de: renda_base
+    para: Captar.valor (filtrado por movimento=Entrada e regra de base)
+  - de: dizimo_percentual
+    para: Ajustes.dizimo_percentual
+formulas_chave:
+  - nome: dizimo_valor
+    definicao: "renda_base * dizimo_percentual"
+  - nome: oferta_regular_valor
+    definicao: "renda_base * oferta_regular_percentual"
+  - nome: total_consagracoes
+    definicao: "dizimo_valor + oferta_regular_valor + oferta_missionaria_valor + oferta_humanitaria_valor"
+regras_preenchimento:
+  - "Conferir percentuais conforme Ajustes."
+  - "Validar a base do dízimo antes de confirmar."
+
+aba: Renda
+proposito: Acompanhar previsão, realização e distribuição da renda.
+campos:
+  - nome: mes
+    tipo: number
+    obrigatorio: true
+  - nome: ano
+    tipo: number
+    obrigatorio: true
+  - nome: renda_prevista
+    tipo: number
+    obrigatorio: false
+  - nome: renda_realizada
+    tipo: number
+    obrigatorio: true
+  - nome: diferenca
+    tipo: number
+    obrigatorio: false
+  - nome: distribuicoes
+    tipo: text  # nota ou chave p/ detalhamento
+    obrigatorio: false
+relacoes:
+  - de: renda_realizada
+    para: Captar.valor (filtrado por movimento=Entrada e critérios)
+formulas_chave:
+  - nome: diferenca
+    definicao: "renda_realizada - renda_prevista"
+regras_preenchimento:
+  - "Atualizar renda_prevista no início do mês; conferência no fechamento."
+
+aba: Monitor
+proposito: Acompanhar semanal/mensalmente tetos/envelopes e alertas.
+campos:
+  - nome: mes
+    tipo: number
+    obrigatorio: true
+  - nome: ano
+    tipo: number
+    obrigatorio: true
+  - nome: envelope
+    tipo: ref(Ajustes.categoria)
+    obrigatorio: true
+  - nome: teto
+    tipo: ref(Ajustes.teto_envelope)
+    obrigatorio: false
+  - nome: gasto_realizado
+    tipo: number
+    obrigatorio: true
+  - nome: variacao
+    tipo: number
+    obrigatorio: false
+  - nome: status
+    tipo: enum[OK, Estourou, Sobra]
+    obrigatorio: false
+  - nome: alerta
+    tipo: boolean
+    obrigatorio: false
+  - nome: ultima_conciliacao
+    tipo: date
+    obrigatorio: false
+relacoes:
+  - de: gasto_realizado
+    para: Captar.valor (filtrado por movimento=Saída, mês/ano e envelope)
+  - de: teto
+    para: Ajustes.teto_envelope
+formulas_chave:
+  - nome: variacao
+    definicao: "gasto_realizado - teto"
+  - nome: status
+    definicao: "IF(gasto_realizado > teto*(1+limite_estouro), 'Estourou', IF(gasto_realizado <= teto, 'OK','Sobra'))"
+regras_preenchimento:
+  - "Revisão semanal: atualizar ultima_conciliacao após conferir extratos."
+
+aba: Analisar
+proposito: Consolidações por mês/categoria/subcategoria.
+campos:
+  - nome: mes
+    tipo: number
+    obrigatorio: true
+  - nome: ano
+    tipo: number
+    obrigatorio: true
+  - nome: categoria
+    tipo: ref(Ajustes.categoria)
+    obrigatorio: true
+  - nome: subcategoria
+    tipo: ref(Ajustes.subcategoria)
+    obrigatorio: false
+  - nome: entradas
+    tipo: number
+    obrigatorio: false
+  - nome: saidas
+    tipo: number
+    obrigatorio: false
+  - nome: saldo
+    tipo: number
+    obrigatorio: false
+relacoes:
+  - de: entradas/saidas
+    para: Captar.valor (agregado por filtros)
+formulas_chave:
+  - nome: saldo
+    definicao: "entradas - saidas"
+regras_preenchimento:
+  - "Leitura; sem edição manual."
+
+aba: Panorama
+proposito: Visão anual e tendências.
+campos:
+  - nome: ano
+    tipo: number
+    obrigatorio: true
+  - nome: mes
+    tipo: number
+    obrigatorio: true
+  - nome: total_entradas
+    tipo: number
+    obrigatorio: false
+  - nome: total_saidas
+    tipo: number
+    obrigatorio: false
+relacoes:
+  - de: total_entradas/total_saidas
+    para: Captar.valor (agregado por ano/mês)
+formulas_chave: []
+regras_preenchimento:
+  - "Leitura; sem edição manual."
+
+aba: Patrimonial
+proposito: Evolução do patrimônio e alocação (bancos, espécie, aplicações).
+campos:
+  - nome: data_referencia
+    tipo: date
+    obrigatorio: true
+  - nome: local
+    tipo: text   # banco, espécie, aplicação
+    obrigatorio: true
+  - nome: saldo
+    tipo: number
+    obrigatorio: true
+  - nome: tipo_local
+    tipo: enum[banco, especie, investimento, outro]
+    obrigatorio: false
+  - nome: observacao
+    tipo: text
+    obrigatorio: false
+relacoes: []
+formulas_chave: []
+regras_preenchimento:
+  - "Atualizar no fechamento mensal com saldos conferidos."
+
+aba: Melhorando
+proposito: Registro de ideias e oportunidades de melhoria.
+campos:
+  - nome: data
+    tipo: date
+    obrigatorio: false
+  - nome: sugestao
+    tipo: text
+    obrigatorio: false
+  - nome: prioridade
+    tipo: enum[imediata, medio_prazo, longo_prazo]
+    obrigatorio: false
+relacoes: []
+formulas_chave: []
+regras_preenchimento:
+  - "Anotar ideias e revisar no fechamento trimestral."
+
+Catálogo de Regras (DSL)
+
+Assunções: Dízimo = 10% (em Ajustes), Oferta Regular = faixa 5–10% (em Ajustes). Base do dízimo definida em Ajustes.base_dizimo (bruta ou líquida).
+
+regra: Consagrações pós-receita (Primícias)
+quando: transacao.movimento == "Entrada" AND transacao.compõe_base_dizimo == true
+entao:
+  - alocar "Dízimo" = Ajustes.dizimo_percentual * transacao.valor_base
+  - alocar "Oferta Regular" = faixa(Ajustes.oferta_regular_min..Ajustes.oferta_regular_max) * transacao.valor_base
+  - alocar "Oferta Missionária" = Ajustes.oferta_missionaria_percentual * transacao.valor_base (se definido)
+  - alocar "Oferta Humanitária" = Ajustes.oferta_humanitaria_percentual * transacao.valor_base (se definido)
+  - restante -> "Custeio"
+excecoes:
+  - "Receitas não recorrentes usam oferta regular mínima (Ajustes.oferta_regular_min)"
+ordem: ["Dízimo","Oferta Regular","Oferta Missionária","Oferta Humanitária","Custeio"]
+
+regra: Base do Dízimo
+quando: evento == "cálculo_dizimo"
+entao:
+  - se Ajustes.base_dizimo == "bruta": transacao.valor_base = soma(Entradas elegíveis em Captar)
+  - se Ajustes.base_dizimo == "liquida": transacao.valor_base = soma(Entradas elegíveis - descontos permitidos)
+excecoes:
+  - "Transferências internas não compõem base"
+ordem: ["Determinar base","Aplicar percentual","Registrar no Envelope"]
+
+regra: Alerta de Estouro de Envelope
+quando: Monitor.gasto_realizado > Monitor.teto * (1 + Ajustes.limite_estouro_percentual)
+entao:
+  - status = "Estourou"
+  - alerta = true
+  - registrar ação corretiva em comentário
+excecoes: []
+ordem: ["Sinalizar","Revisar plano","Ajustar gasto futuro"]
+
+regra: Conciliação Semanal
+quando: hoje - Monitor.ultima_conciliacao > Ajustes.atraso_conciliacao_dias
+entao:
+  - alerta = true
+  - priorizar conciliação antes de novas decisões de gasto
+excecoes: []
+ordem: ["Conciliar","Zerar alerta"]
+
+regra: Respeito ao Sábado
+quando: janela_tempo in [sexta_pôr_do_sol, sábado_pôr_do_sol]
+entao:
+  - "Evitar atividades seculares (ex.: lançamentos e fechamentos); planejar fora deste período."
+excecoes:
+  - "Emergências inevitáveis (registrar depois)"
+ordem: ["Planejar","Executar fora da janela"]
+
+Playbook Operacional (Checklists)
+processo: Lançamento Diário
+passos:
+  - Registrar entradas/saídas no Captar no dia (ou D+1)
+  - Preencher categoria/subcategoria e conta correta
+  - Anexar/guardar comprovantes quando aplicável
+SLA: diário
+restricoes: evitar atividades seculares sexta-pôr-do-sol a Sábado-pôr-do-sol (America/Sao_Paulo)
+
+processo: Consagrações (Primícias)
+passos:
+  - Confirmar base do dízimo conforme Ajustes.base_dizimo
+  - Calcular Dízimo (10%) e Ofertas (faixa e destinos) no Envelope
+  - Registrar confirmações e, se for o caso, comprovantes de devolução/doação
+SLA: na primeira entrada relevante do mês ou no recebimento de renda
+restricoes: priorizar como primícias
+
+processo: Conciliação Semanal
+passos:
+  - Conferir extratos de contas/cartões
+  - Bater com Captar; corrigir divergências
+  - Atualizar Monitor.ultima_conciliacao
+SLA: semanal (D+2)
+restricoes: evitar Sábado
+
+processo: Fechamento Mensal
+passos:
+  - Encerrar lançamentos do mês (competência)
+  - Aplicar consagrações e revisar Envelope
+  - Verificar Monitor (tetos/envelopes) e registrar lições
+  - Atualizar Patrimonial (saldos/locais)
+  - Gerar relatórios (Analisar/Panorama) e revisar em família
+SLA: mensal (D+2)
+restricoes: realizar fora do Sábado
+
+processo: Revisão Familiar
+passos:
+  - Orar, revisar e alinhar decisões (princípios e prioridades)
+  - Avaliar fidelidade (dízimo/ofertas), poupança e orçamento
+  - Definir ajustes para o próximo mês (metas/limites)
+SLA: mensal
+restricoes: realizar em tempo apropriado e respeitoso
+
+Métricas & Relatórios (para o MVP)
+
+Fidelidade de consagração = (Dízimo + Ofertas) ÷ Renda do mês.
+
+Taxa de poupança (se houver fundo/meta) = Aportes ÷ Renda do mês.
+
+Runway da reserva = Saldo de reserva ÷ Custeio médio mensal (meses).
+
+Execução por envelope = Gasto ÷ Teto (por categoria).
+
+Atraso de conciliação = dias desde última conciliação.
+
+Relatórios: Mensal (Envelope/Monitor), Anual (Panorama), Por categoria e destinos de doação, Consolidações (Analisar).
+
+Assunções (para você confirmar/editar nos YAMLs)
+
+Campos exatos de cada aba podem variar; usei nomes típicos (você pode ajustar).
+
+Base do dízimo configurada em Ajustes (bruta ou líquida).
+
+Percentuais de ofertas (regular/missão/humanitária) vêm de Ajustes.
+
+Tetos de envelope (se usados) ficam em Ajustes.
