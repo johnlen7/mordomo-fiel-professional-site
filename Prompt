@@ -1,0 +1,784 @@
+Crie o site baseado em toda informação abaixo:
+
+Baseado na análise dos dados, identifiquei que se trata de uma empresa focada em Mordomia Financeira Cristã. Vou criar uma identidade visual completa:
+
+IDENTIDADE VISUAL - MORDOMIA FINANCEIRA
+
+1. CONCEITO DA MARCA
+
+Nome Sugerido: "Mordomia Financeira" ou "Stewardship Financial"
+Tagline: "Administrando com Fidelidade"
+Posicionamento: Consultoria em gestão financeira familiar baseada em princípios bíblicos
+
+2. PERSONALIDADE DA MARCA
+
+Confiável - Baseada em princípios sólidos
+
+Acolhedora - Para famílias em diferentes situações
+
+Sábia - Orientação financeira fundamentada
+
+Esperançosa - Futuro financeiro próspero
+
+Íntegra - Transparência e honestidade
+
+
+3. PALETA DE CORES
+
+Cores Primárias:
+
+Azul Confiança: #1E3A8A (RGB: 30, 58, 138)  
+Verde Prosperidade: #059669 (RGB: 5, 150, 105)  
+Dourado Sabedoria: #D97706 (RGB: 217, 119, 6)
+
+Cores Secundárias:
+
+Azul Claro: #DBEAFE (RGB: 219, 234, 254)  
+Verde Claro: #D1FAE5 (RGB: 209, 250, 229)  
+Bege Acolhedor: #FEF3C7 (RGB: 254, 243, 199)
+
+Cores Neutras:
+
+Cinza Escuro: #374151 (RGB: 55, 65, 81)  
+Cinza Médio: #6B7280 (RGB: 107, 114, 128)  
+Cinza Claro: #F9FAFB (RGB: 249, 250, 251)  
+Branco: #FFFFFF (RGB: 255, 255, 255)
+
+4. TIPOGRAFIA
+
+Fonte Principal (Títulos):
+
+Montserrat (Bold/SemiBold)
+
+Características: Moderna, legível, confiável
+
+Uso: Logotipo, títulos principais, CTAs
+
+
+Fonte Secundária (Corpo de texto):
+
+Inter (Regular/Medium)
+
+Características: Limpa, legível em telas
+
+Uso: Textos corridos, parágrafos, formulários
+
+
+Fonte de Apoio (Dados):
+
+JetBrains Mono (Regular/Medium)
+
+Características: Monoespaçada para números
+
+Uso: Valores financeiros, tabelas, códigos
+
+
+5. ELEMENTOS VISUAIS
+
+Símbolos Principais:
+
+Balança - Representa equilíbrio financeiro
+
+Árvore - Crescimento e prosperidade
+
+Casa - Proteção familiar
+
+Moedas Organizadas - Gestão ordenada
+
+Mãos Protegendo - Cuidado e mordomia
+
+
+Padrões Gráficos:
+
+Linhas suaves e orgânicas
+
+Ícones com bordas arredondadas
+
+Gradientes sutis azul para verde
+
+Sombras suaves (drop-shadow)
+
+
+6. ESTILO DO LOGOTIPO
+
+Conceito Visual:
+
+Símbolo: Combinação de árvore + balança + casa
+
+Typography: Montserrat SemiBold
+
+Layout: Horizontal preferencial
+
+Versões: Colorida, monocromática, branca
+
+
+Construção:
+
+[ÍCONE] MORDOMIA  
+        FINANCEIRA  
+        Administrando com Fidelidade
+
+7. APLICAÇÕES WEB
+
+Headers/Navigation:
+
+Background: Gradiente #1E3A8A para #059669  
+Texto: #FFFFFF  
+Hover: #D97706
+
+Botões Primários:
+
+Background: #059669  
+Texto: #FFFFFF  
+Hover: #047857  
+Border-radius: 8px
+
+Botões Secundários:
+
+Background: Transparente  
+Texto: #1E3A8A  
+Border: 2px solid #1E3A8A  
+Hover: Background #1E3A8A, Texto #FFFFFF
+
+Cards/Seções:
+
+Background: #FFFFFF  
+Border: 1px solid #E5E7EB  
+Border-radius: 12px  
+Shadow: 0 4px 6px rgba(0,0,0,0.05)
+
+8. ICONOGRAFIA
+
+Estilo dos Ícones:
+
+Line icons com espessura 2px
+
+Cor primária: #1E3A8A
+
+Tamanho padrão: 24px
+
+Estilo: Rounded corners
+
+
+Ícones Principais:
+
+💰 Dízimo/Ofertas
+
+🏠 Essencial/Moradia
+
+📈 Incremental/Crescimento
+
+🛡️ Cobertura/Proteção
+
+⚡ Emergencial
+
+🎯 Projetos
+
+✨ Amenidades
+
+
+9. LAYOUT E COMPOSIÇÃO
+
+Grid System:
+
+Container máximo: 1200px
+
+Breakpoints: 320px, 768px, 1024px, 1200px
+
+Espaçamentos: 8px, 16px, 24px, 32px, 48px, 64px
+
+
+Hierarquia Visual:
+
+H1: Montserrat Bold 48px (#1E3A8A)  
+H2: Montserrat SemiBold 36px (#374151)  
+H3: Montserrat SemiBold 24px (#374151)  
+H4: Montserrat Medium 20px (#6B7280)  
+Body: Inter Regular 16px (#374151)  
+Caption: Inter Regular 14px (#6B7280)
+
+10. APLICAÇÕES ESPECIAIS
+
+Dashboards Financeiros:
+
+Background geral: #F9FAFB  
+Cards: #FFFFFF com bordas #E5E7EB  
+Valores positivos: #059669  
+Valores negativos: #DC2626  
+Valores neutros: #6B7280
+
+Categorias de Gastos:
+
+Fidelidade: #9333EA (Roxo)  
+Essencial: #1E3A8A (Azul)  
+Incremental: #059669 (Verde)  
+Cobertura: #D97706 (Laranja)  
+Emergencial: #DC2626 (Vermelho)  
+Projetos: #7C3AED (Lilás)  
+Amenidades: #06B6D4 (Ciano)
+
+11. DIRETRIZES DE MARCA
+
+Tom de Voz:
+
+Acolhedor mas profissional
+
+Educativo sem ser condescendente
+
+Esperançoso e encorajador
+
+Baseado em sabedoria bíblica
+
+
+Não fazer:
+
+Usar cores muito vibrantes
+
+Tipografias decorativas
+
+Elementos muito complexos
+
+Linguagem financeira técnica demais
+
+
+Aplicações Digitais:
+
+Site responsivo
+
+App mobile
+
+Dashboards interativos
+
+E-books e materiais educativos
+
+Webinars e apresentações
+
+
+Esta identidade visual transmite confiança, prosperidade e cuidado familiar, alinhada com os valores cristãos de mordomia financeira identificados na planilha.
+
+Citações:
+[1] Base-Mordomia-Financeira.xlsx https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/66544305/cc8a9a80-c7b4-4452-bd04-0a48f5ba377c/Base-Mordomia-Financeira.xlsx
+
+Baseado nessas informações abaixo crie um site profissional pra essa empresa da área financeira cristã:
+
+INFORMAÇÕES DA EMPRESA
+
+Nome da Empresa
+
+Mordomo Fiel - Consultoria e Software de Gestão Financeira
+
+Dados Corporativos
+
+CNPJ: 34.567.890/0001-12
+
+Razão Social: Mordomo Fiel Consultoria e Tecnologia Ltda.
+
+Inscrição Estadual: 123.456.789.000
+
+Inscrição Municipal: 9876543-2
+
+
+Endereço Completo
+
+Sede Principal:
+Rua da Mordomia, 245 - 8º andar, sala 802
+Bairro Vila Cristã
+São Paulo - SP - CEP: 01234-567
+Brasil
+
+Filial Rio de Janeiro:
+Av. Príncipe de Paz, 1890 - 12º andar
+Copacabana - Rio de Janeiro - RJ
+CEP: 22070-000
+
+Contatos
+
+Telefone Principal: (11) 3456-7890
+
+WhatsApp Business: (11) 94567-8901
+
+E-mail Geral: contato@mordomofiel.com.br
+
+E-mail Comercial: vendas@mordomofiel.com.br
+
+E-mail Suporte: suporte@mordomofiel.com.br
+
+Website: www.mordomofiel.com.br
+
+
+EQUIPE E LIDERANÇA
+
+CEO e Fundador
+
+Dr. Paulo Henrique Santos
+
+Economista (USP) e Teólogo (Mackenzie)
+
+15 anos de experiência em consultoria financeira
+
+Autor do livro "Mordomia Financeira na Prática"
+
+Palestrante em mais de 200 igrejas pelo Brasil
+
+
+CTO
+
+Eng. Marcos Rafael Silva
+
+Engenheiro de Software (UNICAMP)
+
+Ex-líder técnico no Banco Bradesco
+
+Especialista em fintech e segurança digital
+
+
+Diretora de Consultoria
+
+Dra. Ana Carolina Mendes
+
+Administradora (FGV) e Coach Financeira Certificada
+
+12 anos atuando em educação financeira cristã
+
+Ministra seminários sobre "Família e Finanças"
+
+
+Diretor de Relacionamento
+
+Pr. Roberto Almeida
+
+Bacharel em Teologia e Administração
+
+20 anos de ministério pastoral
+
+Especialista em aconselhamento familiar
+
+
+HISTÓRIA DA EMPRESA
+
+Nossa História
+
+Fundada em 2018 pelo Dr. Paulo Santos, a Mordomo Fiel nasceu da necessidade observada em sua igreja local: famílias cristãs lutando com desorganização financeira apesar de serem fiéis dizimistas.
+
+Começamos oferecendo consultoria presencial para 12 famílias da igreja. Em 2019, desenvolvemos nossa primeira planilha sistematizada. Em 2020, durante a pandemia, criamos nossa plataforma digital que hoje atende mais de 5.000 famílias em todo o Brasil.
+
+Em 2021, expandimos para consultoria empresarial cristã. Em 2023, lançamos nosso app mobile e programa de certificação para consultores.
+
+MISSÃO, VISÃO E VALORES
+
+Missão
+
+Capacitar famílias e empresas cristãs a exercerem mordomia financeira bíblica através de ferramentas práticas, consultoria especializada e educação continuada.
+
+Visão
+
+Ser referência nacional em educação financeira cristã, impactando 50.000 famílias até 2028 e formando uma nova geração de mordomos fiéis.
+
+Valores
+
+Fidelidade: Baseamos tudo nos princípios bíblicos
+
+Integridade: Transparência total em nossos processos
+
+Excelência: Buscamos sempre o melhor resultado
+
+Compaixão: Entendemos as dificuldades familiares
+
+Sabedoria: Aplicamos conhecimento prático e espiritual
+
+
+PRODUTOS E SERVIÇOS
+
+1. Consultoria Familiar Personalizada
+
+Diagnóstico financeiro completo
+
+Plano de reorganização personalizado
+
+Acompanhamento mensal por 12 meses
+
+Investimento: R$ 2.400,00 (12x de R$ 200,00)
+
+
+2. Software Mordomo Fiel Pro
+
+Sistema completo de gestão financeira
+
+Categorização bíblica de gastos
+
+Relatórios automáticos
+
+App mobile incluído
+
+Plano Família: R$ 39,90/mês
+
+Plano Anual: R$ 399,00 (2 meses grátis)
+
+
+3. Curso Online "Fundamentos da Mordomia"
+
+40 horas de conteúdo
+
+8 módulos práticos
+
+Certificado de conclusão
+
+Acesso vitalício
+
+Investimento: R$ 497,00
+
+
+4. Programa de Mentoria Grupal
+
+Grupos de até 20 pessoas
+
+6 meses de acompanhamento
+
+Encontros quinzenais online
+
+Material exclusivo
+
+Investimento: R$ 897,00
+
+
+5. Consultoria Empresarial
+
+Auditoria financeira cristã
+
+Implementação de princípios bíblicos
+
+Treinamento de equipe
+
+Sob consulta
+
+
+PLANOS DO SOFTWARE
+
+Plano Básico (Gratuito)
+
+Controle de até 50 lançamentos/mês
+
+3 categorias principais
+
+Relatórios simples
+
+
+Plano Família (R$ 39,90/mês)
+
+Lançamentos ilimitados
+
+Sistema completo de envelopes
+
+Todas as categorias bíblicas
+
+Relatórios avançados
+
+Metas e planejamento
+
+Suporte por chat
+
+
+Plano Premium (R$ 79,90/mês)
+
+Tudo do Plano Família
+
+Múltiplas contas/cartões
+
+Importação bancária
+
+Consultoria mensal (1h)
+
+Suporte prioritário
+
+Backup automático
+
+
+Plano Igreja (R$ 199,90/mês)
+
+Gestão de múltiplas famílias
+
+Dashboard pastoral
+
+Relatórios consolidados
+
+Treinamento da equipe
+
+Suporte dedicado
+
+
+DEPOIMENTOS
+
+Família Santos - São Paulo/SP
+
+"Em 6 meses, conseguimos quitar todas as nossas dívidas e ainda aumentamos nossa oferta. O sistema de envelopes mudou nossa vida!"
+⭐⭐⭐⭐⭐
+
+Pastor Marcos - Igreja Batista Central
+
+"Implementamos na nossa igreja e 80% das famílias relataram melhora na organização financeira. Recomendo!"
+⭐⭐⭐⭐⭐
+
+João e Maria Oliveira - Brasília/DF
+
+"Finalmente entendemos como ser mordomos fiéis na prática. O suporte é excepcional!"
+⭐⭐⭐⭐⭐
+
+DIFERENCIAIS COMPETITIVOS
+
+Metodologia Única
+
+Sistema de categorização baseado em Malaquias 3:10
+
+Envelope digital para cada área da vida
+
+Relatórios que mostram fidelidade versus bênçãos
+
+
+Base Bíblica Sólida
+
+Cada funcionalidade fundamentada nas Escrituras
+
+Devocional diário sobre finanças
+
+Versículos contextualizados nos relatórios
+
+
+Suporte Pastoral
+
+Equipe treinada em aconselhamento cristão
+
+Orientação não apenas técnica, mas espiritual
+
+Parceria com líderes denominacionais
+
+
+CERTIFICAÇÕES E PARCERIAS
+
+Certificações
+
+ISO 27001 (Segurança da Informação)
+
+Certificado Digital SSL
+
+Compliance LGPD
+
+
+Parcerias Estratégicas
+
+Convenção Batista Brasileira
+
+Assembleia de Deus - Ministério Belém
+
+Igreja do Evangelho Quadrangular
+
+Ministério Pão Diário
+
+Editora Vida Nova
+
+
+Reconhecimentos
+
+Prêmio Destaque Cristão 2022 - Categoria Inovação
+
+Top 10 Fintechs Gospel - Revista Cristianismo Hoje
+
+Selo de Qualidade ADVEC (Associação de Desenvolvedores Cristãos)
+
+
+SEGURANÇA E PRIVACIDADE
+
+Proteção de Dados
+
+Criptografia AES-256
+
+Servidores em território nacional
+
+Backup automático triplo
+
+Conformidade total com LGPD
+
+
+Política de Privacidade Resumida
+
+Não vendemos dados pessoais
+
+Não compartilhamos informações com terceiros
+
+Cookies apenas essenciais
+
+Direito ao esquecimento garantido
+
+
+ÁREAS DE ATUAÇÃO GEOGRÁFICA
+
+Presencial
+
+Grande São Paulo
+
+Grande Rio de Janeiro
+
+Região de Campinas
+
+ABC Paulista
+
+
+Online (Todo Brasil)
+
+Consultoria por videochamada
+
+Software acessível nacionalmente
+
+Suporte por WhatsApp/Chat
+
+Cursos 100% digitais
+
+
+PROCESSO DE CONTRATAÇÃO
+
+Passo 1: Diagnóstico Gratuito
+
+Conversa inicial de 30 minutos
+
+Análise da situação atual
+
+Proposta personalizada
+
+
+Passo 2: Contratação
+
+Assinatura de contrato digital
+
+Pagamento seguro (cartão/PIX/boleto)
+
+Acesso imediato ao sistema
+
+
+Passo 3: Implementação
+
+Configuração personalizada
+
+Treinamento inicial
+
+Acompanhamento nos primeiros 30 dias
+
+
+SUPORTE AO CLIENTE
+
+Canais Disponíveis
+
+WhatsApp Business: (11) 94567-8901
+
+Chat online: 8h às 18h (seg-sex)
+
+E-mail: suporte@mordomofiel.com.br
+
+Central de Ajuda online com +200 artigos
+
+
+Tempo de Resposta
+
+Chat: Imediato
+
+WhatsApp: Até 2 horas
+
+E-mail: Até 24 horas
+
+Ligação: Agendamento online
+
+
+GARANTIAS
+
+Garantia de Satisfação
+
+30 dias para testar sem compromisso
+
+Cancelamento sem multa
+
+Devolução integral se não satisfeito
+
+
+Garantia de Resultado
+
+Organização financeira em até 90 dias
+
+Aumento de pelo menos 15% na capacidade de doação
+
+Redução de 30% no stress financeiro familiar
+
+
+PRÓXIMOS EVENTOS
+
+Seminário "Família Próspera"
+
+Data: 15-17 de Março, 2024
+
+Local: Centro de Convenções Rebouças - SP
+
+Valor: R$ 197,00 (casal)
+
+
+Webinar Gratuito: "7 Erros Mortais das Finanças Cristãs"
+
+Data: Toda terça-feira, 20h
+
+Plataforma: YouTube/Zoom
+
+Gratuito com inscrição prévia
+
+
+BLOG E CONTEÚDO
+
+Artigos Mais Lidos
+
+1. "Como Calcular o Dízimo Corretamente"
+
+
+2. "Orçamento Familiar: Guia Completo para Cristãos"
+
+
+3. "Investimentos: O que a Bíblia Diz?"
+
+
+4. "Como Sair das Dívidas em 12 Passos"
+
+
+5. "Educando os Filhos Financeiramente"
+
+
+
+Podcast "Mordomos de Cristo"
+
+Episódios semanais
+
+Disponível no Spotify, Apple Podcasts
+
++50 episódios publicados
+
+Média de 10.000 downloads/episódio
+
+
+RESPONSABILIDADE SOCIAL
+
+Projeto Mordomo Solidário
+
+Consultoria gratuita para famílias em vulnerabilidade
+
+Parceria com 15 igrejas em periferias
+
+500+ famílias atendidas gratuitamente
+
+
+Bolsas de Estudo
+
+20% de desconto para pastores
+
+50% de desconto para missionários
+
+Gratuidade para líderes em formação
+
+
+Esta estrutura completa fornece todas as informações necessárias para um site profissional robusto e confiável, baseado no sistema de mordomia financeira apresentado.
+
+Citações:
+[1] Base-Mordomia-Financeira.xlsx https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/66544305/cc8a9a80-c7b4-4452-bd04-0a48f5ba377c/Base-Mordomia-Financeira.xlsx
+
